@@ -12,13 +12,6 @@ public class SpringDataJPaApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringDataJPaApplication.class, args);
     }
-
-    @Bean
-    public CommandLineRunner run(EmployeeRepository employeeRepository){
-        return args -> {
-            insertEmployee(employeeRepository);
-        };
-    }
     private void insertEmployee(EmployeeRepository employeeRepository){
         Employee employee = Employee.builder()
                 .firstName("Van")
